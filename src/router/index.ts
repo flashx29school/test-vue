@@ -8,23 +8,36 @@ const router = createRouter({
       name: 'Home',
       component: () => import('../views/HomeView.vue'),
       props: {
-        key: 'navbar'
+        icon: 'pi-home',
+        key: 'app-bar'
       }
     },
     {
-      path: '/about',
-      name: 'About',
-      component: () => import('../views/AboutView.vue'),
+      path: '/general-info',
+      name: 'General Info',
+      component: () => import('../views/GeneralInfo.vue'),
       props: {
-        key: 'navbar'
+        icon: 'pi-info-circle',
+        key: 'app-bar'
       }
     },
     {
-      path: '/test',
-      name: 'Test',
-      component: () => import('../views/AboutView.vue')
-    }
+      path: '/organizers',
+      name: 'Organizing Committee',
+      component: () => import('../views/Organizerz.vue'),
+      props: {
+        icon : 'pi-cog',
+        key: 'app-bar'
+      }
+    },
   ]
 })
+
+// router.beforeEach((to, from) => {
+//   const { isAuth } = useCounterStore()
+//   if (!isAuth && to.name !== 'Login') {
+//     return { name: "Login" }
+//   }
+// })
 
 export default router

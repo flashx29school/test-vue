@@ -37,7 +37,7 @@ const navBarItems = ref<any>([])
 
 onMounted(() => {
   navBarItems.value = router.options.routes
-      .filter((route) => route?.props?.key === 'navbar')
+      .filter((route) => route?.props?.key === 'app-bar')
 })
 </script>
 
